@@ -1,0 +1,19 @@
+@media (max-width: 800px) {
+  .log-in {
+    visibility: hidden;
+    display: none;
+  }
+  .expanded-nav {
+    visibility: hidden;
+    display: none;
+  }
+  .main-nav {
+    align-items: center;
+  }
+  .about-us_hours li {
+    justify-content: flex-start;
+    display: block;
+    flex-direction: flex-column;
+    background: blue;
+  }
+}

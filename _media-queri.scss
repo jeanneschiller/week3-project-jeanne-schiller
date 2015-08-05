@@ -1,0 +1,234 @@
+
+// MEDIA QUERIE 800****************************
+@media (max-width: 800px) {
+	// NAV 
+	.log-in{
+		 visibility: hidden; 
+		 display: none; 
+	}
+	.expanded-nav{
+		visibility: hidden; 
+		 display: none;
+	}
+	.main-nav{
+		align-items: center;
+	}
+	.logo-container{
+		margin-left: 2%;
+	}
+	#search{
+		visibility: hidden; 
+		display: none;
+	}
+	.main-nav button{
+		visibility: hidden; 
+		display: none;
+	}
+	.hero{
+		text-align: center;
+	}
+	// ABOUT US
+	.about-us_content{
+		margin-top: 2.5%;
+	}	
+	.about-us_hours{
+		margin-top: 2.5%;
+	}
+	.about-us_hours li{
+		justify-content: space-around;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.about-us_img_container{
+		visibility: hidden; 
+		display: none;
+	}
+	.about-us_content{
+		width: 75%;
+		background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(assets/contractor.png);
+		background-position: top left;
+		// background: url(assets/contractor.png) bottom left no-repeat;
+		background-width: 30%;
+		background-repeat: no-repeat;
+		// background-height: 80%; 
+		padding-left: 10%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.about-us_content img{
+		padding: 1%;
+	}
+	.brochure{
+		margin-bottom: 3%;
+	}
+	.purchase{
+		padding: 2% 2%;
+		margin-left: 2%;
+		width: 25%;
+	}
+	button h5{
+		text-transform: capitalize;
+	}
+	// SERVICES
+	.services{
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+	.services_content-wrapper{
+		flex-wrap: wrap;
+	}
+	.services_list{
+		@include nav-set-up;
+		width: 100%;
+		margin-bottom: 2%;
+	}
+	.services_list{
+		border-right: none;
+	}
+	.services_content{
+		width: 67%;
+	}
+	.services_content_choose-us{
+		width: 33%;
+
+	}
+	// FOOTER MEDIA 800
+	footer{
+		background: linear-gradient(180deg, $contact-grey, $contact-grey 50%, $form-grey 50%, $form-grey);
+	}
+	.footer_content-wrapper{
+		width: 80%;
+	}
+
+	.footer_about{
+		width: 50%;
+	}
+	.footer_contact{
+		width: 50%;
+	}
+	.footer_form{
+		width: 100%;
+	}
+	.footer_form h5{
+		margin-bottom: 0;
+	} 
+	.footer_form textarea{
+		margin-bottom: 3%;
+	}
+	.footer_form button{
+		margin-bottom: 3%;
+	}
+	.footer-nav ul{
+		visibility: hidden; 
+		display: none;
+	}
+}
+// MEDIA QUERIE 600
+@media (max-width: 600px) {
+	.hero{
+		height: 50vh;
+	}
+	.services_list h5{
+		text-transform: capitalize;
+	}
+}
+// MEDIA QUERIE 588
+@media (max-width: 588px){
+	.hero{
+		padding: 10% 5%;
+	}	
+	.banner_content-wrapper{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		
+	}
+	.purchase {
+		margin-left: 0;
+	}
+}
+
+// MEDIA QUERIE 515
+@media (max-width: 515px){
+	.hero{
+		height: 45vh;
+	}
+	.hero img{
+		padding-bottom: 0;
+		margin: 0 auto;
+	}
+	.hero h1{
+		font-size: 25px;
+		line-height: 1;
+		padding: 0 10%;
+	}
+	.hero h3{
+		font-size: 16px;
+		line-height: 1;
+	}
+	.about-us_bar{
+		flex-wrap:wrap;
+	}
+	.about-us_bar_section{
+		width: 49.5%;
+	}
+	.about-us_content{
+		width: 100%;
+	}
+	.about-us_hours{
+		width: 100%;
+	}
+
+}
+// MEDIA QUERIE 480
+@media (max-width: 480px){
+	.hero{
+		height: 40vh;
+		align-items: center;
+	}
+	.services_content{
+		width: 100%;
+	}
+	.services_img{
+		height: 20vh;
+	}
+	.services_content_choose-us{
+		width: 100%;
+	}
+	.gallery-projects h4{
+		margin-left: 4%;
+	}
+	.gallery_projects_list li{
+		width: 100%;
+		margin: 0 4%;
+	}
+
+	.footer_about{
+		width: 100%;
+	}
+	.footer_contact{
+		width: 100%;
+	}
+	.contact-form_input{
+		width: 100%;
+	}
+	.contact-form_textarea{
+		width: 100%;
+	}
+}
+// MEDIA QUERIE 395
+@media (max-width: 395px){
+	.hero{
+		height: 31vh;
+	}
+	.hero img{
+		width: 25%;
+	}
+	.about-us_bar_section{
+		width: 100%;
+	}
+	.about-us_content{
+		padding-left: 3%;
+	}
+}	

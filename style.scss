@@ -1,0 +1,668 @@
+@import 'set-up';
+@import 'variables';
+@import 'fonts';
+@import 'flickity';
+
+
+@mixin nav-set-up{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+}
+@mixin list-reset{
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		display:inline-block;
+	}
+}
+@mixin wrapper{
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+@mixin section-padding{
+	padding: 0 2%;
+}
+
+html, body {
+		margin: 0;
+		padding: 0;
+	}
+// INPUT FOCUS
+/*-Placeholder settings----------------------------------------------*/
+::-webkit-input-placeholder { /* WebKit browsers */
+   color:    rgb(164,164,164);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:   rgb(164,164,164);
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    rgb(164,164,164);
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    rgb(164,164,164);
+}
+
+// HEADER STYLES ******************************************
+.log-in{
+	background: $light-grey;
+} 
+.log-in_content-wrapper{
+	@include wrapper;
+	@include nav-set-up;
+	@include list-reset;
+	text-transform: uppercase;
+}
+.log-in li{
+	padding: 2% 7px;
+	text-align: center;
+	border-bottom: 1px solid $light-grey;
+}
+.log-in h6{
+	padding: 0;
+	margin: 0;
+}
+.log-in li:hover{
+	border-bottom: 1px solid;
+}
+
+.main-nav {
+	background: $white;
+		
+}
+.main-nav_content-wrapper{
+	@include nav-set-up;
+	@include wrapper;
+}
+.main-nav h2{
+	text-transform: capitalize;
+}
+.main-nav_buttons{
+	display: flex;
+	align-items: center;
+}
+.main-nav input{
+	border: 2px dotted rgb(164,164,164);
+	padding: 5%;
+	color: $footer-grey;
+}
+.main-nav button{
+	border: 2px dotted rgb(164,164,164);
+	height: 49px;
+	background: $white;
+	@include nav-set-up;
+	width: 80px;
+	margin: 0 10px;
+	padding: 2% 3%;
+}
+.main-nav button p{
+	margin: 0;
+	padding-left: 5px;
+}
+.main-nav i{
+	color:$footer-grey;
+	font-size: 20px;
+}
+.logo-container{
+	display: flex;
+	align-items: center;
+	padding: 1%;
+}
+.expanded-nav{
+	background: $black;
+}
+.expanded-nav_content-wrapper{
+	@include wrapper;
+	@include nav-set-up;
+	@include list-reset;
+	justify-content: space-between;
+}
+.expanded-nav_nav{
+	width: 80%;
+}
+.expanded-nav_nav li{
+	margin:5px 0;
+	border-right: solid 1px $text-grey;
+	transform: skewX(-35deg);
+}
+.expanded-nav_nav h6{
+	color: $text-grey;
+	transform: skewX(35deg);
+	margin:7px;
+}
+.expanded-nav_nav h6:hover{
+	color: $yellow;
+}
+.expanded-nav_social{
+	background: rgb(33,33,33);
+	padding: 2%;
+	transform:skewX(-35deg);
+	width: 20%;
+	
+}
+.expanded-nav_social ul{
+	display: flex;
+}
+.social-icon_container{
+	background: rgb(80,80,80);
+	border-radius: 50%;
+	color: $black;
+	transform:skewX(35deg);
+	font-size: 14px;
+	width: 20px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-left: 4px;
+	align-items: center;
+	margin: 0 5px;
+
+}
+.social-icon_container:hover{
+	background: $yellow;
+}
+.nav-buffer{
+	width:100%;
+	padding: 25px;
+	background: $black;
+	
+}
+// SLIDING NAV*******************************************************
+		input[type=checkbox]{
+			display: none;
+		}
+		.navigation{
+			height:90vh;
+			background: $form-grey;
+			width: 300px;
+			position: absolute;
+			top:100;
+			right:-300px;
+			margin:0;
+			margin-top: 90px;
+			transition: all 0.5s ease;
+			z-index: 60;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+			padding-top: 4%;
+		}
+		.navigation li{
+			justify-content: center;
+			width: 100%;
+			display: inline-block;
+			text-align: center;
+		}
+		.navigation h6:hover{
+			color: $yellow;
+		}
+		.navigation h6{
+			color: $text-grey;
+			margin: 0;
+		}
+		.dd_social{
+			display: flex;
+			display: inline-block;
+
+		}
+		.dd_social_container{
+			display: inline-block;
+			margin: 1%;
+			padding:10px;
+			border: 1px solid $form-grey;
+		}
+		.dd_social_container i{
+			color: $text-grey;
+		}
+		.dd_social_container:hover{
+			border-radius: 50%;
+			padding: 10px;
+			border: 1px solid $yellow;
+		}
+		#nav-check:checked + .navigation{
+		right:0;
+		}
+	.main-nav{
+		position:relative;
+		right: 0;
+		transition: all 0.5s ease;
+	}
+	#nav-check:checked ~ .main-nav{
+		right:300px;
+	}
+//END OF SLIDING NAV************************************************* 
+
+.hero{
+	@include wrapper;
+	background: url(https://download.unsplash.com/photo-1433840496881-cbd845929862) no-repeat center;
+	background-size: 100%;
+	padding: 15% 5% 10% 5%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin-top: -50px;
+
+}
+.hero h1, .hero h3{
+	color: white;
+	margin: 0;
+}
+.hero h3{
+	text-transform: none;
+}
+.hero img{
+	margin-right: 20px;
+	padding-bottom: 30px;
+}
+
+// ABOUT US STYLES **********************************
+.about-us{
+	background: white;
+	@include wrapper;
+}
+.about-us_content-wrapper{
+	display:flex;
+	flex-wrap: wrap;
+}
+.about-us_bar{
+	width: 100%;
+	display: flex;
+}
+.about-us_bar_section{
+	width:25%;
+	background: $light-grey;
+	padding: 2% 2%;
+	justify-content:center;
+	margin: 1px;
+	text-align: center;
+	color: $footer-grey;
+}
+.about-us_bar_section:hover{
+	background: $yellow;
+	color: $white;
+	fill: white;
+}
+.svg-box{
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	padding-top: 2%;
+}
+.svg-box svg{
+	height:100%;
+	width: 100%;
+}
+.about-us_img_container{
+	width: 29%;
+}
+.construction{
+	width: 100%;
+}
+.about-us_content{
+	width: 46%;
+	@include section-padding;
+	margin-top: 60px;
+}
+.about-us_content h4{
+	margin-top: 0;
+}
+.about-us_content img{
+	padding-top: 3%;
+	padding-bottom: 10%;
+	width:36%;
+}
+// ABOUT-US HOURS STYLES
+.about-us_hours{
+	width: 25%;
+	margin-top: 60px;
+}
+.about-us_hours_container{
+	border: 1px solid $light-grey;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.about-us_hours h4{
+	margin: 0;
+}
+.about-us_hours ul{
+	margin: 0;
+	padding: 0;
+
+}
+.dashed-border{
+	width: 100%;
+}
+.about-us_hours li{
+	@include nav-set-up;
+	padding:8px 0 8px 0;
+}
+.hours_day{
+	width: 25%;
+}
+.hours_hours{
+	width: 25%;
+	text-align: left;
+}
+
+.brochure{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background: $light-grey;
+	border-radius: 4px;
+	border: 1px solid rgb(228,228,228);
+	padding: 10px 20px;
+	text-align: center;
+	
+}
+.brochure h5{
+	margin:0;
+	padding-left: 10px;
+}
+.brochure:hover{
+	border: 2px solid $form-grey;
+	background: $yellow;
+}
+// SERVIES STYLES
+.services{
+	background: $light-grey;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.services_content-wrapper{
+	display:flex;
+	@include wrapper;
+	
+	
+}
+.services_list{  //why does service list have margin?
+	width: 18%;
+	border-right: 3px solid $text-grey;
+	margin:0;
+	padding:0;	
+}
+
+.services_list li{
+	border-right: 3px solid $text-grey;
+	width: 101.5%;
+	z-index: 3;
+	display: inline-block;
+}
+.services_list h5{
+	margin: 8px;
+}
+
+.services_list li:hover{
+	color: $yellow;
+	border-right: 3px solid $yellow;
+}
+// .services_list li::after{  //TRY AND FIX THE HOVER EFFECT!!!!!!!!!!!!!
+// 	content:"";
+// 	border-right: 0px solid $yellow;
+// 	transition: border 2s ease;
+// 	overflow: hidden;
+// }
+// .services_list li::hover::after{
+// 	color: $yellow;
+// 	border-right: 3px;
+// } //end of broken hover
+.services_content{
+	width:57%;
+	@include section-padding;
+
+}
+.services_content li{
+	display: inline-block;
+	width: 100%;
+	margin: 8px;
+}
+.services_content h4{
+	margin-top:0;
+}
+.services_content_choose-us{
+	width: 25%;
+	@include section-padding;	
+}
+.fa-check{
+	color: rgb(164,207,108);
+	margin-right: 5px;
+}
+.choose-us_container{
+	background: $white;
+	padding: 20px;
+	border-radius: 10px;
+	@include list-reset;
+}
+.choose-us_container h4{
+	margin:0;
+}
+.choose-us_container li{
+	border-bottom: 1px dashed $text-grey;
+	padding: 10px 0;
+}
+
+.services_img{
+	width: 100%;
+	height: 30vh;
+	background: url(https://download.unsplash.com/photo-1433785567155-bf5530cab72c) center;
+	background-size: 100%;
+	border-radius: 5px;
+}
+
+
+// BANNER STYLES
+
+
+// PURCHASE NOW STYLES
+.skin-purchase{
+	background: $contact-grey;
+	
+}
+.skin-purchase h4{
+	color: white;
+	text-transform: capitalize;
+}
+.banner_content-wrapper{
+	@include wrapper;
+	display: flex;
+	align-items: center;
+	padding:2%;
+}
+.purchase{
+	background: $yellow;
+	border-radius: 7px;
+	padding: 15px 30px;
+	border: 1px solid $form-grey;
+	margin-left: 30px;
+
+}
+.purchase h5{
+	margin: 0;
+}
+.purchase:hover{
+	background: rgb(164,207,108);
+}
+// GALERY STYLES
+.gallery-projects{
+	background: $white;
+	margin-bottom: 50px;
+}
+.gallery-projects_content-wrapper{
+	@include list-reset;
+	@include wrapper;
+}
+.gallery_projects_list{
+	@include nav-set-up;
+	width:100%;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.gallery_projects_list li{
+	width: calc( (100%/3) - (2%) );
+	margin-right: 2%;
+}
+.gallery_projects_list img{
+	width: 100%;
+}
+.gallery_projects_list h5{
+	color: $footer-grey;
+	margin-top: 12px;
+	margin-bottom: 0;
+}
+.gallery_projects_list p{
+	margin-top: 0;
+}
+
+// REVIEW STYLES
+.reviews{
+	background: $white;
+	
+}
+.reviews_content-wrapper{
+	@include wrapper;
+	text-align: center;
+}
+.gallery{
+	margin-bottom: 50px;
+}
+.gallery-cell{
+	width: 100%;
+}
+li.dot.is-selected{
+	background: $yellow;
+}
+// ICON BANNER
+.icon-banner{
+	@include wrapper;
+}
+.icon-banner img{
+	width: 100%;
+	text-align: center;
+}
+
+// BANNER STYLES
+.skin-rating{
+	background: $yellow;
+
+}
+.skin-rating_content-wrapper{
+	@include wrapper;
+	text-align: center;
+	padding: 3%;
+}
+.skin-rating h4{
+	color: white;
+}
+
+// FOOTER STYLES
+footer{
+	background: linear-gradient(90deg, $contact-grey, $contact-grey 50%, $form-grey 50%, $form-grey);
+}
+footer h5{
+	color: $white;
+}
+.footer_content-wrapper{
+	@include wrapper;
+	display: flex;
+	flex-wrap: wrap;
+}
+.footer_about{
+	width: 25%;
+}
+.footer_about p{
+	padding: 0 2%;
+}
+.footer_contact{
+	width:25%;
+	@include list-reset;
+	flex-wrap:wrap;
+	flex-direction: row;
+}
+.footer_contact li{
+	display: flex;
+	div{
+		width: 15px;
+	}
+}
+.footer_contact p{
+	border-left: 1px solid $text-grey;
+	padding-left: 2%;
+	font-size: 12px;
+	margin: 0;
+	margin-bottom: 5%;
+}
+.footer_form{
+	width: 50%;
+}
+.contact-form{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.contact-form_input{
+	width: 50%;
+}
+.contact-form_textarea{
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.footer_form input{
+	background: $form-grey;
+	border: none;
+	border-bottom: 1px solid $text-grey;
+	padding: 6% 2%;
+	margin-right: 4%;
+	margin-bottom: 4%;
+	width: 96%;
+}
+.footer_form textarea{
+	background: $form-grey;
+	border: 1px solid $text-grey;
+	padding: 6% 6% 22%;
+	width: 100%;
+	margin-bottom: 6%;
+
+}
+.footer_form button{
+	background: $form-grey;
+	border: solid 1px $yellow;
+	color: $white;
+	padding: 2% 3%;
+	padding: 4%;
+}
+
+.footer_form button:hover{
+	background: $yellow;
+	color: $form-grey;
+}
+.footer-nav{
+	background: $footer-grey;
+}
+.footer-nav_content-wrapper{
+	@include wrapper;
+	@include nav-set-up;
+	@include list-reset;
+	justify-content: space-between;
+}
+.footer-nav li{
+	margin:5px 0;
+	border-right: solid 1px $text-grey;
+	transform: skewX(-30deg);
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.footer-nav li p{
+	transform: skewX(30deg);
+	margin:0;
+	color: $text-grey;
+}
+
+@import 'media-queri';
